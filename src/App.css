@@ -1,38 +1,63 @@
+body {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background: #efefef;
+  background: #1c1c28;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.App.dark {
+  background: #1c2c44;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+/* 
+input[type="checkbox"] {
+  appearance: none;
+  display: none;
+  visibility: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.checkbox {
+  display: inline-block;
+  padding: 10px;
 }
+
+.checkbox img {
+  width: 32px;
+  height: auto;
+  margin: 0 5px;
+}
+
+.checkbox__toggle {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #092c3e;
+  cursor: pointer;
+}
+
+.checkbox__toggle::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 250ms ease-in;
+}
+
+.checkbox-language:checked ~ .checkbox__toggle::before {
+  
+  transform: translateX(20px);
+}
+ */

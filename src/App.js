@@ -1,11 +1,17 @@
-import React from "react"
+import React, { useState } from "react"
 import "./App.css"
-import RecoveryPanel from "./RecoveryPanel"
+import ToggleSwitch from "./ToggleSwitchTheme"
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
+
   return (
-    <div className="App">
-      <RecoveryPanel />
+    <div className={darkMode ? `App dark` : `App`}>
+      <ToggleSwitch />
     </div>
   )
 }
