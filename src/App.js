@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import "./App.css"
-import ToggleSwitch from "./ToggleSwitchTheme"
+import ToggleSwitch from "./ToggleSwitch"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)

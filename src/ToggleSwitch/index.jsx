@@ -1,11 +1,11 @@
 import React from "react"
-import "./style.css"
+import "./style.scss"
 
 const ToggleSwitchTheme = () => (
-  <div className="toggle-theme">
+  <div className="toggle-switch">
     <label>
       <input type="checkbox" />
-      <span className="toggle"></span>
+      <span className="switch"></span>
       <i className="fas fa-moon icon-moon"></i>
     </label>
   </div>
