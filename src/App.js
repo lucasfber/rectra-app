@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import "./App.css"
+import "./App.scss"
 import ToggleSwitch from "./ToggleSwitch"
+import Card from "./Card"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -11,7 +12,9 @@ function App() {
 
   return (
     <div className={darkMode ? `App dark` : `App`}>
-      <ToggleSwitch />
+      <div className="container">
+        <Card />
+      </div>
     </div>
   )
 }

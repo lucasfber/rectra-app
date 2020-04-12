@@ -1,15 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400&display=swap");
+
 body {
   box-sizing: border-box;
+  font-family: "Teko", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .App {
   text-align: center;
-  background: #efefef;
   background: #1c1c28;
+  background: #efefef;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .App.dark {
