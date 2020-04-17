@@ -2,7 +2,7 @@ import React from "react"
 import "./style.scss"
 
 const ToggleSwitchTheme = () => (
-  <div className="toggle-switch">
+  <div className="toggle-switch-theme">
     <label>
       <input type="checkbox" />
       <span className="switch"></span>
