@@ -1,11 +1,13 @@
 import React from "react"
 import "./style.scss"
+import { useTranslation } from "react-i18next"
 
 const Footer = () => {
+  const { t } = useTranslation()
   return (
     <footer>
       <div className="container">
-        <p>Fonte:</p>
+        <p>{t("footer.source")}</p>
         <ul>
           <li>
             <a
@@ -29,19 +31,19 @@ const Footer = () => {
           </li>
         </ul>
         <div className="note-section">
-          <span>Nota!</span> Essa aplicação foi desenvolvida apenas para
-          propósitos educacionais. Você pode conferir o seu código{" "}
+          <span>{t("footer.note")} </span>
+          {t("footer.noteContent")}
           <a rel="noopener noreferrer" target="_blank" href="#/">
-            aqui
+            {t("footer.repositoryLink")}
           </a>
         </div>
         <div className="credits">
           <p>
-            Desenvolvido por{" "}
+            {t("footer.developedBy")}{" "}
             <a href="#/" rel="noopener noreferrer" target="_blank">
               Lucas Bertoldo
             </a>
-            . 2020
+            . {new Date().getFullYear()}
           </p>
         </div>
       </div>

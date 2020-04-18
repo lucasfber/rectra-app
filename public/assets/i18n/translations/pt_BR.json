@@ -1,4 +1,10 @@
 {
-  "card.recovered": "Pessoas Recuperadas",
-  "card.lastUpdate": "Última atualização"
+  "card.recovered": "Pacientes Recuperados",
+  "card.lastUpdate": "Última atualização",
+  "footer.source": "Fonte:",
+  "footer.note": "Nota!",
+  "footer.noteContent": "Essa aplicação foi desenvolvida apenas para propósitos educacionais. Você pode conferir o seu código ",
+  "footer.repositoryLink": "aqui",
+  "footer.developedBy": "Desenvolvido por",
+  "footer.developer": "Lucas Bertoldo"
 }
