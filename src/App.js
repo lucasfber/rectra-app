@@ -2,6 +2,9 @@ import React, { useState } from "react"
 import "./App.scss"
 import Card from "./Card"
 import ToggleBar from "./ToggleBar"
+import globe from "./assets/img/globe.svg"
+import brazil from "./assets/img/brazil.svg"
+import darkGlobe from "./assets/img/dark-globe.svg"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -14,7 +17,8 @@ function App() {
     <div className={darkMode ? `App dark` : `App`}>
       <ToggleBar />
       <div className="container">
-        <Card />
+        <Card image={globe} />
+        <Card image={brazil} />
       </div>
     </div>
   )

@@ -2,15 +2,17 @@
   background-color:  #202133;
   background-color: white;
   //border: 1px solid #ccc;
+  margin: 10px 0;
   border-radius: 5px;
   box-shadow: 1px 2px 3px #ccc;
   color: #2ecc71;
   min-height: 300px;
   width: 100%;
   display: flex;
-  align-items: center;
+  //align-items: center;
   justify-content: center;
   padding: 0 16px;
+  
   &.dark {
     background-color:  #202133;
   }
@@ -18,31 +20,41 @@
 
 .card__inner {
   text-transform: uppercase;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
   img {
-    width: 45px;
+    width: 64px;
+    height: 64px;
   }
 
   h2 {
     word-break: break-all;
-    font-size: 72px;
+    font-size: 44px;
     text-align: center;
     line-height: 0.8;
     margin-top: 25px;
-    letter-spacing: 4px;
+    //letter-spacing: 2px;
   }
 
   .covered {
-    font-size: 32px;
+    //font-size: 32px;
     color: #bbb;
-    letter-spacing: 4px;
+    margin-top: 5px;
+    letter-spacing: 2px;
   }
 
   .last-update {
     margin-top: 30px;
-    font-size: 22px;
+    font-size: 12px;
+    //font-size: 22px;
     color: #888;
-    letter-spacing: 2px;
+    //letter-spacing: 2px;
+    span {
+      display: block;
+    }
   }
 }
 
