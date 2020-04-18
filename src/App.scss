@@ -11,6 +11,11 @@ img {
   height: auto;
 }
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .App {
   text-align: center;
   background: #1c1c28;
@@ -20,9 +25,8 @@ img {
   align-items: center;
   justify-content: center; */
 
-  .container {
-    width: 90%;
-    margin: 0 auto;
+  > .container {
+    margin: 50px auto 0 auto;
   }
 }
 

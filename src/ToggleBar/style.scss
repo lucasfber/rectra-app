@@ -2,6 +2,11 @@
   background-color: #f6f6f6;
   border-bottom: 2px solid #e6e6e6;
   padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
   .container {
     display: flex;
     align-items: center;
