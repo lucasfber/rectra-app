@@ -8,7 +8,7 @@
 
   .icon-moon {
     color: #aaa;
-    font-size: 22px;
+    font-size: 18px;
     transition: color 400ms ease-in;
   }
 
@@ -23,7 +23,7 @@
       }
 
       ~ .switch::before {
-        transform: translateX(20px);
+        transform: translateX(15px);
       }
 
       ~ .icon-moon {
@@ -35,8 +35,8 @@
   .switch {
     display: inline-block;
     position: relative;
-    width: 40px;
-    height: 20px;
+    width: 30px;
+    height: 15px;
     border-radius: 20px;
     background-color: #aaa;
     cursor: pointer;
@@ -47,8 +47,8 @@
       top: 2px;
       left: 2px;
       content: "";
-      width: 16px;
-      height: 16px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
       background-color: white;
       transition: transform 200ms ease-in;
