@@ -1,9 +1,9 @@
 footer {
-  background-color: white;
+  background-color: #222;
   padding: 20px 0;
   text-align: right;
   font-size: 14px;
-  color: #222;
+  color: white;
   position: relative;
 
   a {
@@ -22,18 +22,19 @@ footer {
 
   .credits {
     padding: 5px 0;
-    position: absolute;
+/*     position: absolute;
     left: 0;
     width: 100%;
-    bottom: 0;
+    bottom: 0; */
     text-align: center;
+    color: #aaa;
   }
 
   .note-section, .credits {
     a {
       font-size: 14px;
       font-weight: bold;
-      color: #555;
+      color: #2ecc71;
     }
   }
 }

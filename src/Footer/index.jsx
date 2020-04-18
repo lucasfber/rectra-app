@@ -40,7 +40,11 @@ const Footer = () => {
         <div className="credits">
           <p>
             {t("footer.developedBy")}{" "}
-            <a href="#/" rel="noopener noreferrer" target="_blank">
+            <a
+              href="https://github.com/lucasfber"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               Lucas Bertoldo
             </a>
             . {new Date().getFullYear()}
