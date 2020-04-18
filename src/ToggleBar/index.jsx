@@ -1,13 +1,13 @@
 import React from "react"
 import "./style.scss"
 import ToggleSwitchTheme from "../ToggleSwitchTheme"
-import ToggleLanguage from "../ToggleLanguage"
+import DropdownLanguage from "../DropdownLanguage"
 
 const ToggleBar = () => (
   <div className="toggle-bar">
     <div className="container">
       <ToggleSwitchTheme />
-      <ToggleLanguage />
+      <DropdownLanguage />
     </div>
   </div>
 )
