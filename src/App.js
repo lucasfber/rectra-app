@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, Suspense } from "react"
 import "./App.scss"
+import "./i18n"
 import Card from "./Card"
 import ToggleBar from "./ToggleBar"
 import globe from "./assets/img/globe.svg"
@@ -16,12 +17,14 @@ function App() {
  */
   return (
     <div className={darkMode ? `App dark` : `App`}>
-      <ToggleBar />
-      <div className="container">
-        <Card image={globe} />
-        <Card image={brazil} />
-      </div>
-      <Footer />
+      <Suspense fallback={null}>
+        <ToggleBar />
+        <div className="container">
+          <Card image={globe} />
+          <Card image={brazil} />
+        </div>
+        <Footer />
+      </Suspense>
     </div>
   )
 }
