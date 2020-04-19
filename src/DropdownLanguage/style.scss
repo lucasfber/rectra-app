@@ -17,13 +17,10 @@
 
     i {
       font-size: 12px;
-      
     }
   }
 
-  .dropdown-inner {
-    //display: none;
-    
+  .dropdown-inner {    
     position: absolute;
     top: 22px;
     right: -10px;
@@ -37,9 +34,34 @@
     display: flex;
     align-content: center;
     justify-content: flex-start;
-    //border: 1px solid green;
     font-size: 12px;
-    
+
+    p {
+      padding-top: 4px;
+    }
   }
 }
 
+@media screen and (min-width: 768px) {
+  .dropdown-language {
+    img {
+      width: 34px;
+      height: 22px;
+    }
+
+    .current-language {  
+      i {
+        font-size: 14px;
+      }
+    }
+
+    .dropdown-item {
+      padding: 10px;
+      width: 145px;
+      display: flex;
+      align-content: center;
+      justify-content: flex-start;
+      font-size: 14px;
+    }
+  }
+}

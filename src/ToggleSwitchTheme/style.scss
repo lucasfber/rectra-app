@@ -19,7 +19,6 @@
     &:checked {
 
       ~ .switch {
-        background-color: #3498db;
         background-color: white;
       }
 
@@ -29,7 +28,6 @@
       }
 
       ~ .icon-moon {
-        color: rgb(236, 236, 104);
         color: white;
       }
     }
@@ -59,3 +57,37 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .toggle-switch-theme {
+
+    .switch {
+      width: 34px;
+      height: 17px;
+
+      &::before {
+        top: 2px;
+        left: 2px;
+        width: 13px;
+        height: 13px;
+      }
+    }
+
+    .icon-moon {
+      font-size: 20px;
+    }
+
+    input {  
+      &:checked {
+    
+        ~ .switch::before {
+          //background-color: rgb(9, 10, 22);
+          transform: translateX(17px);
+        }
+  
+        ~ .icon-moon {
+          color: white;
+        }
+      }
+    }
+  }
+}
