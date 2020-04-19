@@ -20,14 +20,17 @@
 
       ~ .switch {
         background-color: #3498db;
+        background-color: white;
       }
 
       ~ .switch::before {
+        background-color: rgb(9, 10, 22);
         transform: translateX(15px);
       }
 
       ~ .icon-moon {
         color: rgb(236, 236, 104);
+        color: white;
       }
     }
   }

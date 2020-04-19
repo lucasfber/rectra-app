@@ -3,10 +3,10 @@ import "./style.scss"
 import ToggleSwitchTheme from "../ToggleSwitchTheme"
 import DropdownLanguage from "../DropdownLanguage"
 
-const ToggleBar = () => (
+const ToggleBar = ({ toggleDarkMode }) => (
   <div className="toggle-bar">
     <div className="container">
-      <ToggleSwitchTheme />
+      <ToggleSwitchTheme toggleDarkMode={toggleDarkMode} />
       <DropdownLanguage />
     </div>
   </div>

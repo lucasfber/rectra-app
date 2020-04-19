@@ -31,12 +31,51 @@ ul {
   min-height: 100vh;
 
   > .container {
-    margin: 50px auto 0 auto;
+    //margin: 50px auto 0 auto;
+    padding-top: 50px;
+  }
+
+  &.dark {
+    background: #1c1c28;
+    color: white;
+
+    .toggle-bar {
+      background-color: rgb(9, 10, 22);
+      //border-bottom: 1px solid rgba(white, 0.3);
+      border: none;
+    }
+
+    .current-language {
+      i {
+        color: white;
+      }
+    }
+
+    .dropdown-inner {
+      box-shadow: none;
+      background-color: #202133;
+      color: white;
+      border: 1px solid rgba(white, 0.1);
+    }
+
+    .card {
+      background-color:  #202133;
+      box-shadow: none;
+    
+      .recovered {
+        color: white;
+      }
+
+      .last-update {
+        color: #ccc;
+      }
+    }
+
+    footer {
+      background-color: rgb(9, 10, 22);
+      color: white;
+    }
   }
 }
 
-.App.dark {
-  background: #1c2c44;
-  color: white;
-}
  

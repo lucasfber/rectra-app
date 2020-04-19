@@ -11,16 +11,17 @@ import Footer from "./Footer"
 function App() {
   const [darkMode, setDarkMode] = useState(false)
 
-  /*  const toggleDarkMode = () => {
+  const toggleDarkMode = () => {
     setDarkMode(!darkMode)
   }
- */
+
   return (
+    /*  */
     <div className={darkMode ? `App dark` : `App`}>
       <Suspense fallback={null}>
-        <ToggleBar />
+        <ToggleBar toggleDarkMode={toggleDarkMode} />
         <div className="container">
-          <Card image={globe} />
+          <Card image={darkMode ? darkGlobe : globe} />
           <Card image={brazil} />
         </div>
         <Footer />
