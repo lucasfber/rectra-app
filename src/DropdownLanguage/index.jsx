@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./style.scss"
 import brazilFlag from "../assets/img/brazil.png"
 import usaFlag from "../assets/img/usa.png"
@@ -13,6 +13,18 @@ const DropdownLanguage = () => {
     i18n.changeLanguage(language)
     setOpenDropdown(false)
   }
+
+  const disposeDropdown = () => {
+    if (openDropdown) setOpenDropdown(false)
+  }
+
+  useEffect(() => {
+    window.addEventListener("click", disposeDropdown)
+
+    return () => {
+      window.removeEventListener("click", disposeDropdown)
+    }
+  })
 
   return (
     <div className="dropdown-language">
