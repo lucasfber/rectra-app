@@ -1,6 +1,7 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
 import "./style.scss"
+import createDate from "../util/date"
 
 const Card = ({ image, recovered, lastUpdate }) => {
   const { t } = useTranslation()
@@ -12,8 +13,7 @@ const Card = ({ image, recovered, lastUpdate }) => {
         <p className="recovered">{t("card.recovered")}</p>
         <p className="last-update">
           {t("card.lastUpdate")}
-          {/* <span>11/04/2020 | 22:27:34</span> */}
-          {new Date(lastUpdate).getFullYear()}
+          <span>{createDate(lastUpdate)}</span>
         </p>
       </div>
     </div>
