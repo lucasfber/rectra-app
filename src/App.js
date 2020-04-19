@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react"
+import React, { useState, Suspense, useEffect } from "react"
 import "./App.scss"
 import "./i18n"
 import Card from "./Card"
@@ -10,6 +10,27 @@ import Footer from "./Footer"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
+  const [recoveredData, setRecoveredData] = useState({})
+
+  useEffect(() => {
+    const getData = async () => {
+      const globalResults = await fetch("https://covid19.mathdro.id/api")
+      const globalRecovered = await globalResults.json()
+
+      const brazilianResult = await fetch(
+        "https://covid19.mathdro.id/api/countries/BR"
+      )
+
+      const brazilianRecovered = await brazilianResult.json()
+
+      setRecoveredData({
+        globalRecovered: globalRecovered.recovered.value,
+        brazilianRecovered: brazilianRecovered.recovered.value,
+      })
+    }
+
+    getData()
+  }, [])
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
@@ -21,8 +42,11 @@ function App() {
       <Suspense fallback={null}>
         <ToggleBar toggleDarkMode={toggleDarkMode} />
         <div className="container">
-          <Card image={darkMode ? darkGlobe : globe} />
-          <Card image={brazil} />
+          <Card
+            image={darkMode ? darkGlobe : globe}
+            recovered={recoveredData.globalRecovered}
+          />
+          <Card image={brazil} recovered={recoveredData.brazilianRecovered} />
         </div>
         <Footer />
       </Suspense>
