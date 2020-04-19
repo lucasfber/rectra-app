@@ -6,7 +6,7 @@ import createDate from "../util/date"
 const Card = ({ image, recovered, lastUpdate }) => {
   const { t } = useTranslation()
   return (
-    <div className="card dark">
+    <div className="card">
       <div className="card__inner">
         <img src={image} alt="" />
         <h2>{recovered}</h2>

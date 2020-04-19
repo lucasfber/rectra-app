@@ -44,7 +44,6 @@ ul {
 
     .toggle-bar {
       background-color: rgb(9, 10, 22);
-      //border-bottom: 1px solid rgba(white, 0.3);
       border: none;
     }
 
@@ -81,4 +80,14 @@ ul {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .App {
+    > .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 100px 0 50px 0;
+    }
+  }
+}
  
