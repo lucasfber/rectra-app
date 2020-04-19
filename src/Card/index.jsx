@@ -2,7 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 import "./style.scss"
 
-const Card = ({ image, recovered }) => {
+const Card = ({ image, recovered, lastUpdate }) => {
   const { t } = useTranslation()
   return (
     <div className="card dark">
@@ -12,7 +12,8 @@ const Card = ({ image, recovered }) => {
         <p className="recovered">{t("card.recovered")}</p>
         <p className="last-update">
           {t("card.lastUpdate")}
-          <span>11/04/2020 | 22:27:34</span>
+          {/* <span>11/04/2020 | 22:27:34</span> */}
+          {new Date(lastUpdate).getFullYear()}
         </p>
       </div>
     </div>

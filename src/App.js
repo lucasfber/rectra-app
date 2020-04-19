@@ -10,10 +10,12 @@ import Footer from "./Footer"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [recoveredData, setRecoveredData] = useState({})
 
   useEffect(() => {
     const getData = async () => {
+      setLoading(true)
       const globalResults = await fetch("https://covid19.mathdro.id/api")
       const globalRecovered = await globalResults.json()
 
@@ -25,8 +27,11 @@ function App() {
 
       setRecoveredData({
         globalRecovered: globalRecovered.recovered.value,
+        globalLastUpdate: globalRecovered.lastUpdate,
         brazilianRecovered: brazilianRecovered.recovered.value,
+        brazilianLastUpdate: brazilianRecovered.lastUpdate,
       })
+      setLoading(false)
     }
 
     getData()
@@ -41,12 +46,19 @@ function App() {
     <div className={darkMode ? `App dark` : `App`}>
       <Suspense fallback={null}>
         <ToggleBar toggleDarkMode={toggleDarkMode} />
+
         <div className="container">
+          {loading && <h3 className="loading">Loading...</h3>}
           <Card
             image={darkMode ? darkGlobe : globe}
             recovered={recoveredData.globalRecovered}
+            lastUpdate={recoveredData.globalLastUpdate}
           />
-          <Card image={brazil} recovered={recoveredData.brazilianRecovered} />
+          <Card
+            image={brazil}
+            recovered={recoveredData.brazilianRecovered}
+            lastUpdate={recoveredData.brazilianLastUpdate}
+          />
         </div>
         <Footer />
       </Suspense>
