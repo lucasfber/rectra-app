@@ -54,10 +54,30 @@
 @media screen and (min-width: 768px) {
   .card {
     margin: 10px; 
-    min-height: 300px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0 16px;
   }
+
+  .card__inner {
+  
+    img {
+      width: 68px;
+      height: 68px;
+    }
+  
+    h2 {
+      word-break: break-all;
+      font-size: 48px;
+      margin-top: 27px;
+    }
+  
+    .recovered {
+      margin-top: 7px;
+      letter-spacing: 2px;
+    }
+  
+    .last-update {
+      margin-top: 32px;
+      font-size: 13px;
+    }
+  }
+  
 }
