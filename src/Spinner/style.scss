@@ -1,0 +1,21 @@
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #ddd;
+  border-top-color: #bcbcbc;
+  border-radius: 50%;
+  animation: 700ms spin infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-360deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .spinner {
+    position: absolute;
+    top: 67px;
+  }
+}

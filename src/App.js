@@ -7,6 +7,7 @@ import globe from "./assets/img/globe.svg"
 import brazil from "./assets/img/brazil.svg"
 import darkGlobe from "./assets/img/dark-globe.svg"
 import Footer from "./Footer"
+import Spinner from "./Spinner"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -48,13 +49,15 @@ function App() {
         <ToggleBar toggleDarkMode={toggleDarkMode} />
 
         <div className="container">
-          {loading && <h3 className="loading">Loading...</h3>}
+          <Spinner />
           <Card
+            isLoading={loading}
             image={darkMode ? darkGlobe : globe}
             recovered={recoveredData.globalRecovered}
             lastUpdate={recoveredData.globalLastUpdate}
           />
           <Card
+            isLoading={loading}
             image={brazil}
             recovered={recoveredData.brazilianRecovered}
             lastUpdate={recoveredData.brazilianLastUpdate}

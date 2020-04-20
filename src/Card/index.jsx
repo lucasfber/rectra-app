@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 import "./style.scss"
 import createDate from "../util/date"
 
-const Card = ({ image, recovered, lastUpdate }) => {
+const Card = ({ image, recovered, lastUpdate, isLoading }) => {
   const { t } = useTranslation()
   return (
     <div className="card">
@@ -13,7 +13,7 @@ const Card = ({ image, recovered, lastUpdate }) => {
         <p className="recovered">{t("card.recovered")}</p>
         <p className="last-update">
           {t("card.lastUpdate")}
-          <span>{createDate(lastUpdate)}</span>
+          {!isLoading && <span>{createDate(lastUpdate)}</span>}
         </p>
       </div>
     </div>
