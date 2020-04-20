@@ -49,7 +49,7 @@ function App() {
         <ToggleBar toggleDarkMode={toggleDarkMode} />
 
         <div className="container">
-          <Spinner />
+          {loading && <Spinner />}
           <Card
             isLoading={loading}
             image={darkMode ? darkGlobe : globe}

@@ -40,6 +40,7 @@ ul {
     color: #222;
   }
 
+  /* === DARK MODE STYLE */
   &.dark {
     background: #1c1c28;
     color: white;
@@ -60,6 +61,13 @@ ul {
       background-color: #202133;
       color: white;
       border: 1px solid rgba(white, 0.1);
+    }
+
+
+    .spinner {
+      border-color: rgba(#202133, .5);
+      border-color: lighten(#202133,10%);
+      border-top-color: white;
     }
 
     .card {
