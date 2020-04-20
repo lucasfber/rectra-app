@@ -37,6 +37,19 @@ const Footer = () => {
             {t("footer.repositoryLink")}
           </a>
         </div>
+
+        <div className="social">
+          <a href="mailto:lucas.fber@gmail.com">
+            <i className="fas fa-envelope-square"></i>
+          </a>
+          <a
+            href="https://github.com/lucasfber"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i className="fab fa-github-square"></i>
+          </a>
+        </div>
         <div className="credits">
           <p>
             {t("footer.developedBy")}{" "}
