@@ -35,7 +35,7 @@ function App() {
       setLoading(false)
     }
 
-    //getData()
+    getData()
   }, [])
 
   const toggleDarkMode = () => {
