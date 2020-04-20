@@ -81,3 +81,38 @@
   }
   
 }
+
+@media screen and (min-width: 1280px) { 
+  .card {
+    border-radius: 5px;
+    box-shadow: 2px 3px 3px #ccc;
+    margin: 30px;
+    
+  }
+
+  .card__inner {
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      word-break: break-all;
+      font-size: 72px;
+      margin-top: 27px;
+    }
+
+    .recovered {
+      margin-top: 10px;
+      font-size: 18px;
+      letter-spacing: 3px;
+      color: darken(#bbb, 5%);
+    }
+
+    .last-update {
+      margin-top: 32px;
+      font-size: 15px;
+    }
+  }
+}

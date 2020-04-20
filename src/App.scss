@@ -88,4 +88,16 @@ ul {
     }
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .App {
+    > .container {
+      width: 1200px;
+      max-width: 1200px;
+      height: 100vh;
+      padding: 0;
+      padding-top: 54px;
+    }
+  }
+}
  

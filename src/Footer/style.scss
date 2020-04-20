@@ -73,3 +73,23 @@ footer {
     }
   }
 }
+
+@media screen and (min-width: 1280px) {
+  footer {
+    font-size: 18px;
+
+    li {
+      margin-bottom: 5px;
+
+      a {
+        font-size: 16px;
+      }
+    }
+
+    .note-section, .credits {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
