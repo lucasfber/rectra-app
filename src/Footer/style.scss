@@ -123,7 +123,19 @@ footer {
       }
     }
 
-    .note-section, .credits {
+    .social {
+      margin-top: 60px;
+      i {
+        font-size: 32px;
+      }
+    }
+
+    .credits {
+      margin-top: 2px;
+      font-size: 14px;
+    }
+
+    .note-section {
       a {
         font-size: 16px;
       }

@@ -1,7 +1,7 @@
 {
   "card.recovered": "Recovered patients",
   "card.lastUpdate": "Last update:",
-  "footer.source": "Data Source:",
+  "footer.source": "Source:",
   "footer.note": "Note!",
   "footer.noteContent": "This application was developed for educational purposes only. You can view its code ",
   "footer.repositoryLink": "here",
