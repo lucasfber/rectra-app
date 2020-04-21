@@ -40,7 +40,7 @@ const DropdownLanguage = () => {
           {i18n.language === "pt_BR" ? (
             <div className="dropdown-item" onClick={() => changeLanguage("en")}>
               <img src={usaFlag} alt="" />
-              <p>Inglês (US)</p>
+              <p>English (US)</p>
             </div>
           ) : (
             <div
@@ -48,7 +48,7 @@ const DropdownLanguage = () => {
               onClick={() => changeLanguage("pt_BR")}
             >
               <img src={brazilFlag} alt="" />
-              <p>Portuguese (BR)</p>
+              <p>Português (BR)</p>
             </div>
           )}
         </div>
