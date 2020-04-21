@@ -61,8 +61,14 @@ ul {
       background-color: #202133;
       color: white;
       border: 1px solid rgba(white, 0.1);
-    }
+      transition: 400ms ease;
 
+      &:hover {
+        background-color: #232438;
+        color: white;
+        border-color: rgba(white, 0.5);
+      }
+    }
 
     .spinner {
       border-color: rgba(#202133, .5);

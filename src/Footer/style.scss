@@ -14,6 +14,11 @@ footer {
   a {
     color: #aaa;
     font-size: 12px;
+    transition: 250ms ease;
+
+    &:hover {
+      color: lighten(#aaa,20%);
+    }
   }
 
   .note-section {
@@ -26,6 +31,10 @@ footer {
 
     a {
       font-size: 13px;
+
+      &:hover {
+        color: #2eee71;
+      }
     }
   }
 
