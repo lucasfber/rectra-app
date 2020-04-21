@@ -40,10 +40,12 @@ function App() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
+
+    /* manipulating body's pseudo-elements to add styles */
+    document.querySelector("body").classList.toggle("dark")
   }
 
   return (
-    /*  */
     <div className={darkMode ? `App dark` : `App`}>
       <Suspense fallback={null}>
         <ToggleBar toggleDarkMode={toggleDarkMode} />
