@@ -6,7 +6,10 @@ i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
-    lng: "pt_BR",
+    lng:
+      localStorage.getItem("language") === null
+        ? "pt_BR"
+        : localStorage.getItem("language"),
     backend: {
       loadPath: "/assets/i18n/{{ns}}/{{lng}}.json",
     },
