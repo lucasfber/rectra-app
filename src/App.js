@@ -35,20 +35,36 @@ function App() {
       setLoading(false)
     }
 
+    const isDarkModeActive =
+      localStorage.getItem("darkMode") !== null
+        ? localStorage.getItem("darkMode") === "true"
+        : false
+
+    setDarkMode(isDarkModeActive)
     getData()
   }, [])
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
+    if (darkMode) {
+      console.log("entro no if")
+      localStorage.removeItem("darkMode")
+      setDarkMode(!darkMode)
 
-    /* manipulating body's pseudo-elements to add styles */
-    document.querySelector("body").classList.toggle("dark")
+      /* manipulating body's pseudo-elements to add styles */
+      document.querySelector("body").classList.toggle("dark")
+    } else {
+      setDarkMode(!darkMode)
+      localStorage.setItem("darkMode", !darkMode)
+
+      /* manipulating body's pseudo-elements to add styles */
+      document.querySelector("body").classList.toggle("dark")
+    }
   }
 
   return (
     <div className={darkMode ? `App dark` : `App`}>
       <Suspense fallback={null}>
-        <ToggleBar toggleDarkMode={toggleDarkMode} />
+        <ToggleBar toggleDarkMode={toggleDarkMode} isDarkMode={darkMode} />
 
         <div className="container">
           {loading && <Spinner />}

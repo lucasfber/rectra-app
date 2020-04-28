@@ -16,7 +16,7 @@
     display: none;
     visibility: hidden;
 
-    &:checked {
+    &.checked {
 
       ~ .switch {
         background-color: white;
@@ -77,7 +77,7 @@
     }
 
     input {  
-      &:checked {
+      &.checked {
     
         ~ .switch::before {
           transform: translateX(17px);
