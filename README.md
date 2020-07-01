@@ -1,3 +1,18 @@
+## Description:
+  Aplicação feita com React que monitora o número de casos curados de Covid-19 no Brasil e no mundo. Os dados utilizados são da Johns Hopkins University (https://systems.jhu.edu/)
+  
+### Built with:
+  * React (Hooks)
+  * Sass (SCSS)
+  * Internaciolização com i18next-react
+  * Web Design Responsivo 
+  
+## Live version:
+https://rectra.netlify.app/
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
