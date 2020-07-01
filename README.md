@@ -3,6 +3,7 @@
   
 ### Built with:
   * React (Hooks)
+  * Context API
   * Sass (SCSS)
   * Internaciolização com i18next-react
   * Web Design Responsivo 
