@@ -1,98 +1,65 @@
-import React, { useState, Suspense, useEffect } from 'react';
+import React, { useEffect, Suspense, useState } from 'react';
 import './App.scss';
 import './i18n';
-import Card from './Card';
-/* import ToggleBar from './ToggleBar'; */
+import useFetch from './hooks/useFetch';
+import Card from './Card/';
 import globe from './assets/img/globe.svg';
 import brazil from './assets/img/brazil.svg';
-/* import darkGlobe from './assets/img/dark-globe.svg'; */
 import Footer from './Footer';
+import ToggleBar from './ToggleBar';
 import Spinner from './Spinner';
-import useFetch from './hooks/useFetch';
 
 function App() {
-  /* const [darkMode, setDarkMode] = useState(false); */
-  /* const [loading, setLoading] = useState(false); */
-  const [recoveredData, setRecoveredData] = useState({});
+  const [
+    globalResults,
+    errorGlobal,
+    loadingGlobal,
+    requestGlobalResults,
+  ] = useFetch();
 
-  const [globalResults, setGlobalResults, requestGlobalResults] = useFetch();
+  const [
+    brazilianResults,
+    errorBrazilian,
+    loadingBrazilian,
+    requestBrazilianResults,
+  ] = useFetch();
+
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    fetch('https://covid19.mathdro.id/api')
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-    /*     const getData = async () => {
-      setLoading(true);
- */
-    //const globalResults = await fetch('https://covid19.mathdro.id/api');
-    /* const globalRecovered = await globalResults.json(); */
-    /*       const getGlobalResults = async () => {
-        requestGlobalResults('https://covid19.mathdro.id/api');
-      };
-      await getGlobalResults();
-
-      const globalRecovered = globalResults;
-      console.log('globalREsults => ', globalResults);
-
-      const brazilianResult = await fetch(
-        'https://covid19.mathdro.id/api/countries/BR',
-      );
-
-      const brazilianRecovered = await brazilianResult.json();
-
-      setRecoveredData({
-        globalRecovered: globalResults.recovered.value,
-        globalLastUpdate: globalRecovered.lastUpdate,
-        brazilianRecovered: brazilianRecovered.recovered.value,
-        brazilianLastUpdate: brazilianRecovered.lastUpdate,
-      });
-      setLoading(false);
-    };
-
-    const isDarkModeActive =
-      localStorage.getItem('darkMode') !== null
-        ? localStorage.getItem('darkMode') === 'true'
-        : false;
-
-    setDarkMode(isDarkModeActive);
-    getData(); */
-  }, []);
-
-  /*   const toggleDarkMode = () => {
-    if (darkMode) {
-      localStorage.removeItem('darkMode');
-      setDarkMode(!darkMode);
-
-      /* manipulating body's pseudo-elements to add styles 
-      document.querySelector('body').classList.toggle('dark');
-    } else {
-      setDarkMode(!darkMode);
-      localStorage.setItem('darkMode', !darkMode);
-
-      /* manipulating body's pseudo-elements to add styles 
-      document.querySelector('body').classList.toggle('dark');
-    }
-  }; */
+    requestGlobalResults('https://covid19.mathdro.id/api');
+    requestBrazilianResults('https://covid19.mathdro.id/api/countries/BR');
+  }, [requestBrazilianResults, requestGlobalResults]);
 
   return (
-    <div className={'App'}>
+    <div className={darkMode ? 'App dark' : 'App'}>
       <Suspense fallback={null}>
-        {/* <ToggleBar toggleDarkMode={toggleDarkMode} isDarkMode={darkMode} /> */}
-
+        <ToggleBar
+          toggleDarkMode={() => setDarkMode(!darkMode)}
+          isDarkMode={darkMode}
+        />
         <div className="container">
           {false && <Spinner />}
-          <Card
-            isLoading={false}
-            image={globe}
-            recovered={recoveredData.globalRecovered}
-            lastUpdate={recoveredData.globalLastUpdate}
-          />
-          {/*           <Card
-            isLoading={loading}
-            image={brazil}
-            recovered={recoveredData.brazilianRecovered}
-            lastUpdate={recoveredData.brazilianLastUpdate}
-          /> */}
+          {globalResults && (
+            <Card
+              isLoading={false}
+              image={globe}
+              recovered={globalResults.recovered.value}
+              lastUpdate={globalResults.lastUpdate}
+              error={errorGlobal}
+              loading={loadingGlobal}
+            />
+          )}
+          {brazilianResults && (
+            <Card
+              isLoading={false}
+              image={brazil}
+              recovered={brazilianResults.recovered.value}
+              lastUpdate={brazilianResults.lastUpdate}
+              error={errorBrazilian}
+              loading={loadingBrazilian}
+            />
+          )}
         </div>
         <Footer />
       </Suspense>
