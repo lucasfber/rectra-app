@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense, useState } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import './App.scss';
 import './i18n';
 import useFetch from './hooks/useFetch';
@@ -7,7 +7,7 @@ import globe from './assets/img/globe.svg';
 import brazil from './assets/img/brazil.svg';
 import Footer from './Footer';
 import ToggleBar from './ToggleBar';
-import Spinner from './Spinner';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
   const [
@@ -24,7 +24,7 @@ function App() {
     requestBrazilianResults,
   ] = useFetch();
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
 
   useEffect(() => {
     requestGlobalResults('https://covid19.mathdro.id/api');
@@ -39,25 +39,22 @@ function App() {
           isDarkMode={darkMode}
         />
         <div className="container">
-          {false && <Spinner />}
           {globalResults && (
             <Card
-              isLoading={false}
+              isLoading={loadingGlobal}
               image={globe}
               recovered={globalResults.recovered.value}
               lastUpdate={globalResults.lastUpdate}
               error={errorGlobal}
-              loading={loadingGlobal}
             />
           )}
           {brazilianResults && (
             <Card
-              isLoading={false}
+              isLoading={loadingBrazilian}
               image={brazil}
               recovered={brazilianResults.recovered.value}
               lastUpdate={brazilianResults.lastUpdate}
               error={errorBrazilian}
-              loading={loadingBrazilian}
             />
           )}
         </div>

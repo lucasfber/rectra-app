@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-const useFetch = (params) => {
+const useFetch = () => {
   const [data, setData] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -18,7 +18,6 @@ const useFetch = (params) => {
     }
   }, []);
 
-  console.log('data =>', data);
   return [data, loading, error, request];
 };
 
